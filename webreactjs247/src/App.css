@@ -31,12 +31,15 @@
   color: black;
 }
 .container{
+  position: relative;
   padding:10px;
 }
 .container h3,p {
   text-align: center;
 }
-
+.cart{
+  background-color: #dddddd20;
+}
 .column {
   display: inline-block;
   width: 31.2%;
