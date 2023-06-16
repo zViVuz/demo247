@@ -13,7 +13,7 @@ export default function Navigation() {
           menuIcon={<Icon>menu</Icon>}>
 
     <ul>
-      <li to="/home"> <Link to="/"><Icon left>home</Icon>Home</Link></li>
+      <li> <Link to="/"><Icon left>home</Icon>Home</Link></li>
       <li to="/about"><Link to="/about"><Icon left>info_outline</Icon>About</Link>
       </li>
       <li to="/news"><Link to="/news"><Icon left>dvr</Icon>News</Link>

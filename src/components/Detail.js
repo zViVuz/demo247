@@ -1,31 +1,40 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react'
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 // import {Players} from "../components/shared/ListOfPlayers"
-import { Players } from "../shared/ListOfPlayers";
+import { Players } from '../shared/ListOfPlayers';
+import ModalCase from '../ModalCase';
+import { Card, CardTitle, Col, Container, Icon, Row } from 'react-materialize';
 
 const Detail = () => {
-  const userName = useParams();
-  const player = Players.find((obj) => {
+    const userName = useParams();
+    const [isOpen, setIsOpen] = useState(false);
+  const player = Players.find(obj => {
     return obj.id == userName.id;
   });
-  let cost = player.cost.toLocaleString();
+   let cost = player.cost.toLocaleString();
 
   return (
-    <div className="container">
-      <div className="product-card">
-        <div className="badge">{player.name}</div>
-        <div className="product-tumb">
-          <img src={`../${player.img}`} alt="" />
-        </div>
-        <div className="product-details">
-          <h4>{player.club}</h4>
-          <div className="product-price">Market value: € {cost}</div>
-          <p>{player.info}</p>
-          <div className="product-bottom-details"></div>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <Container>
+      <Row>
+        <Col>
+        <Card closeIcon={<Icon>close</Icon>}
+              header={<CardTitle image={`../${player.img}`}>{player.name}</CardTitle>}
+        >
+          <a onClick={()=> setIsOpen(true)} className='btn-floating halfway-fab waves-effect waves-light red'>
+            <Icon>ondemand_video</Icon>
+          </a>
+          {player.club}<br/>
+          Market value: €{cost}<br/>
+          {player.info}<br/>
 
-export default Detail;
+        </Card>
+        {isOpen && 
+        <ModalCase setIsOpen={setIsOpen} player={player}></ModalCase>}
+        </Col>  
+      </Row>
+    </Container>
+  )
+}
+
+export default Detail
