@@ -24,7 +24,7 @@ nav{
 }
 .navigation a {
   display: block;
-  padding: 14px 16px;
+  padding: 20px 20px;
   text-decoration: none;
 }
 
@@ -39,8 +39,20 @@ nav{
 .container h3,p {
   text-align: center;
 }
+.container a{
+  text-decoration: none;
+  width: 100px;
+  font-size: 20px;
+}
+.container a:first-child:hover{
+  text-decoration: none;
+  width: 100px;
+  font-size: 20px;
+  background-color: goldenrod;
+}
 .cart{
-  background-color: #dddddd20;
+  position: absolute;
+  background-color: #d9535320;
 }
 .column {
   display: inline-block;
