@@ -8,7 +8,7 @@ export default function Navigation() {
   return (
     <Navbar className="menu" 
           alignLinks="right"
-          brand={<span className="brand-logo">Player Cards</span>}
+          brand={<span className="brand-logo"></span>}
           id="mobile-nav" 
           menuIcon={<Icon>menu</Icon>}>
 

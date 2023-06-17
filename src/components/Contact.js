@@ -33,11 +33,8 @@ const Contact = () => {
             <option value="2">France</option>
             <option value="3">Spain</option>
           </Select>
-          <Textarea
-            icon={<Icon>mode_edit</Icon>}
-            id="Textarea-28"
-            label="Your content"
-          />
+          <Icon>mode_edit</Icon>
+          <Textarea id="Textarea-28" label="Your content" />
           <Button>Submit</Button>
         </form>
       </Container>
